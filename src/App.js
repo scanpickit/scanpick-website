@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/hero';
+import TermsOverlay from './components/Terms&Cond';
+import PrivacyPolicyOverlay from './components/PrivacyPolicy';
 
-function App() {
+import FooterComponent from './components/footer';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+
+const App = () => {
+  const [showTermsOverlay, setShowTermsOverlay] = useState(false);
+  const [showPrivacyPolicyOverlay, setShowPrivacyPolicyOverlay] = useState(false);
+
+  const handleOpenTermsOverlay = () => {
+    setShowTermsOverlay(true);
+  };
+
+  const handleCloseTermsOverlay = () => {
+    setShowTermsOverlay(false);
+  };
+
+  const handleOpenPrivacyPolicyOverlay = () => {
+    setShowPrivacyPolicyOverlay(true);
+  };
+
+  const handleClosePrivacyPolicyOverlay = () => {
+    setShowPrivacyPolicyOverlay(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Hero />
+      <AboutUs></AboutUs>
+      <ContactUs />
+      <FooterComponent 
+        onOpenTermsOverlay={handleOpenTermsOverlay} 
+        onOpenPrivacyPolicyOverlay={handleOpenPrivacyPolicyOverlay} 
+      />
+      
+      
+      {showTermsOverlay && <TermsOverlay onClose={handleCloseTermsOverlay} />}
+      {showPrivacyPolicyOverlay && <PrivacyPolicyOverlay onClose={handleClosePrivacyPolicyOverlay} />}
+      
     </div>
   );
 }
