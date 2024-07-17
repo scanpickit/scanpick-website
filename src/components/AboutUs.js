@@ -11,26 +11,26 @@ const people = [
     role: 'Director',
     imageUrl:  shivam
 },
+{
+  name: 'Tirumarredi Naresh',
+  role: 'Director',
+  imageUrl:naresh
+},
   {
     name: 'Vishnu R',
     role: 'Director',
     imageUrl:vishnu
   },
   {
-    name: 'Tirumarredi Naresh',
+    name: 'Arif',
     role: 'Director',
-    imageUrl:naresh
+    imageUrl:arif
   },
   {
     name: 'Varun ',
     role: 'Director',
     imageUrl:varun
-  },
-  {
-    name: 'Arif',
-    role: 'Director',
-    imageUrl:arif
-  },
+  }, 
 ];
 
 const AboutUs = () => {

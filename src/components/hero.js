@@ -3,8 +3,6 @@ import AnimatedText from './AnimatesText';
 import TypingAnimation from './TypingAnimation';
 import image1 from '../images/frontpng.png';
 import side from '../images/side.png';
-import AboutUs from './AboutUs';
-import ContactUs from './ContactUs';
 
 const Hero = () => {
   const phrases = [
